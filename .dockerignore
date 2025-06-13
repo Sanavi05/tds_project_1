@@ -1,7 +1,13 @@
 __pycache__/
 *.pyc
-*.pkl
+*.pyo
+*.pyd
+env/
 venv/
-*.log
 *.db
+*.sqlite3
 debug_full_page.html
+vectorstore.pkl
+vectorstore_course.pkl
+node_modules/
+.git
