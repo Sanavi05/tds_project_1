@@ -1,0 +1,293 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+Images: Compression
+Image compression is essential when deploying apps. Often, pages have dozens of images. Image analysis runs over thousands of images. The cost of storage and bandwidth can grow over time.
+Here are things you should know when you’re compressing images:
+Image dimensions
+are the width and height of the image in pixels. This impacts image size a lot
+Lossless
+compression (PNG, WebP) preserves exact data
+Lossy
+compression (JPEG, WebP) removes some data for smaller files
+Vector
+formats (SVG) scale without quality loss
+WebP
+is the modern standard, supporting both lossy and lossless
+Here’s a rule of thumb you can use as of 2025.
+Use SVG if you can (i.e. if it’s vector graphics or you can convert it to one)
+Else, reduce the image to as small as you can, and save as (lossy or lossless) WebP
+Common operations with Python:
+from
+pathlib
+import
+Path
+from
+PIL
+import
+Image
+import
+io
+async
+def
+compress_image
+(
+input_path
+:
+Path
+,
+output_path
+:
+Path
+,
+quality
+:
+int
+=
+85
+)
+-
+>
+None
+:
+"""Compress an image while maintaining reasonable quality."""
+with
+Image
+.
+open
+(
+input_path
+)
+as
+img
+:
+# Convert RGBA to RGB if needed
+if
+img
+.
+mode
+==
+'RGBA'
+:
+img
+=
+img
+.
+convert
+(
+'RGB'
+)
+# Optimize for web
+img
+.
+save
+(
+output_path
+,
+'WEBP'
+,
+quality
+=
+quality
+,
+optimize
+=
+True
+)
+# Batch process images
+paths
+=
+Path
+(
+'images'
+)
+.
+glob
+(
+'*.jpg'
+)
+for
+p
+in
+paths
+:
+await
+compress_image
+(
+p
+,
+p
+.
+with_suffix
+(
+'.webp'
+)
+)
+Copy to clipboard
+Error
+Copied
+Command line tools include
+cwebp
+,
+pngquant
+,
+jpegoptim
+, and
+ImageMagick
+.
+# Convert to WebP
+cwebp
+-q
+85
+input.png
+-o
+output.webp
+# Optimize PNG
+pngquant
+--quality
+=
+65
+-80 image.png
+# Optimize JPEG
+jpegoptim --strip-all --all-progressive
+--max
+=
+85
+image.jpg
+# Convert and resize
+convert input.jpg
+-resize
+800x600 output.jpg
+# Batch convert
+mogrify
+-format
+webp
+-quality
+85
+*.jpg
+Copy to clipboard
+Error
+Copied
+Watch this video on modern image formats and optimization (15 min):
+Tools for image optimization:
+squoosh.app
+: Browser-based compression
+ImageOptim
+: GUI tool for Mac
+sharp
+: Node.js image processing
+Pillow
+: Python imaging library
+Previous
+Markdown
+Next
+Static hosting: GitHub Pages

@@ -1,0 +1,184 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+LLM Sentiment Analysis
+OpenAI’s API
+provides access to language models like GPT 4o, GPT 4o mini, etc.
+For more details, read OpenAI’s guide for:
+Text Generation
+Vision
+Structured Outputs
+Start with this quick tutorial:
+Here’s a minimal example using
+curl
+to generate text:
+curl
+https://api.openai.com/v1/chat/completions
+\
+-H
+"Content-Type: application/json"
+\
+-H
+"Authorization: Bearer
+$OPENAI_API_KEY
+"
+\
+-d
+'{
+    "model": "gpt-4o-mini",
+    "messages": [{ "role": "user", "content": "Write a haiku about programming." }]
+  }'
+Copy to clipboard
+Error
+Copied
+Let’s break down the request:
+curl https://api.openai.com/v1/chat/completions
+: The API endpoint for text generation.
+-H "Content-Type: application/json"
+: The content type of the request.
+-H "Authorization: Bearer $OPENAI_API_KEY"
+: The API key for authentication.
+-d
+: The request body.
+"model": "gpt-4o-mini"
+: The model to use for text generation.
+"messages":
+: The messages to send to the model.
+"role": "user"
+: The role of the message.
+"content": "Write a haiku about programming."
+: The content of the message.
+This video explains how to use large language models (LLMs) for sentiment analysis and classification, covering:
+Sentiment Analysis
+: Use OpenAI API to identify the sentiment of movie reviews as positive or negative.
+Prompt Engineering
+: Learn how to craft effective prompts to get desired results from LLMs.
+LLM Training
+: Understand how to train LLMs by providing examples and feedback.
+OpenAI API Integration
+: Integrate OpenAI API into Python code to perform sentiment analysis.
+Tokenization
+: Learn about tokenization and its impact on LLM input and cost.
+Zero-Shot, One-Shot, and Multi-Shot Learning
+: Understand different approaches to using LLMs for learning.
+Here are the links used in the video:
+Jupyter Notebook
+Movie reviews dataset
+OpenAI Playground
+OpenAI Pricing
+OpenAI Tokenizer
+OpenAI API Reference
+OpenAI Docs
+Previous
+TDS GPT Reviewer
+Next
+LLM Text Extraction

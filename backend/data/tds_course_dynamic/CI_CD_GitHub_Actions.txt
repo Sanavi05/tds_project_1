@@ -1,0 +1,267 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+CI/CD: GitHub Actions
+GitHub Actions
+is a powerful automation platform built into GitHub. It helps automate your development workflow - running tests, deploying applications, updating datasets, retraining models, etc.
+Understand the basics of
+YAML configuration files
+Explore the
+pre-built actions from the marketplace
+How to
+handle secrets securely
+Triggering a workflow
+Staying within the
+free tier limits
+Caching dependencies to speed up workflows
+Here is a sample
+.github/workflows/iss-location.yml
+that runs daily, appends the International Space Station location data into
+iss-location.json
+, and commits it to the repository.
+name
+:
+Log ISS Location Data Daily
+on
+:
+schedule
+:
+# Runs at 12:00 UTC (noon) every day
+-
+cron
+:
+"0 12 * * *"
+workflow_dispatch
+:
+# Allows manual triggering
+jobs
+:
+collect-iss-data
+:
+runs-on
+:
+ubuntu
+-
+latest
+permissions
+:
+contents
+:
+write
+steps
+:
+-
+name
+:
+Checkout repository
+uses
+:
+actions/checkout@v4
+-
+name
+:
+Install uv
+uses
+:
+astral
+-
+sh/setup
+-
+uv@v5
+-
+name
+:
+Fetch ISS location data
+run
+:
+|
+# python
+uv run
+-
+-
+with requests python << 'EOF'
+          import requests
+
+          data = requests.get('http
+:
+//api.open
+-
+notify.org/iss
+-
+now.json').text
+          with open('iss
+-
+location.jsonl'
+,
+'a') as f
+:
+f.write(data + '\n')
+          'EOF'
+-
+name
+:
+Commit and push changes
+run
+:
+|
+# shell
+git config
+-
+-
+local user.email "github
+-
+actions
+[
+bot
+]
+@users.noreply.github.com"
+          git config
+-
+-
+local user.name "github
+-
+actions
+[
+bot
+]
+"
+          git add iss
+-
+location.jsonl
+          git commit
+-
+m "Update ISS position data
+[
+skip ci
+]
+"
+|
+|
+exit 0
+          git push
+Copy to clipboard
+Error
+Copied
+Tools:
+GitHub CLI
+: Manage workflows from terminal
+Super-Linter
+: Validate code style
+Release Drafter
+: Automate releases
+act
+: Run actions locally
+How to handle secrets in GitHub Actions
+Previous
+Serverless hosting: Vercel
+Next
+Containers: Docker, Podman

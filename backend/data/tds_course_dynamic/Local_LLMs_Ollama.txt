@@ -1,0 +1,189 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+Local LLM Runner: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+Local LLM Runner: Ollama
+ollama
+is a command-line tool for running open-source large language models entirely on your own machine—no API keys, no vendor lock-in, full control over models and performance.
+Basic Usage
+Download Ollama for macOS, Linux, or Windows
+and add the binary to your
+PATH
+. See the full
+Docs ↗
+for installation details and troubleshooting.
+# List installed and available models
+ollama list
+# Download/pin a specific model version
+ollama pull gemma3:1b-it-qat
+# Run a one-off prompt
+ollama run gemma3:1b-it-qat
+'Write a haiku about data visualization'
+# Launch a persistent HTTP API on port 11434
+ollama serve
+# Interact programmatically over HTTP
+curl
+-X
+POST http://localhost:11434/api/chat
+\
+-H
+'Content-Type: application/json'
+\
+-d
+'{"model":"gemma3:1b-it-qat","prompt":"Hello, world!"}'
+Copy to clipboard
+Error
+Copied
+Key Features
+Model management
+:
+list
+/
+pull
+— Install and switch among Llama 3.3, DeepSeek-R1, Gemma 3, Mistral, Phi-4, and more.
+Local inference
+:
+run
+— Execute prompts entirely on-device for privacy and zero latency beyond hardware limits.
+Persistent server
+:
+serve
+— Expose a local REST API for multi-session chats and integration into scripts or apps.
+Version pinning
+:
+pull model:tag
+— Pin exact model versions for reproducible demos and experiments.
+Resource control
+:
+--threads
+/
+--context
+— Tune CPU/GPU usage and maximum context window for performance and memory management.
+Real-World Use Cases
+Quick prototyping
+. Brainstorm slide decks or blog outlines offline, without worrying about API quotas:
+ollama run gemma-3 'Outline a slide deck on Agile best practices'
+Data privacy
+. Summarize sensitive documents on-device, retaining full control of your data:
+cat financial_report.pdf | ollama run phi-4 'Summarize the key findings'
+CI/CD integration
+. Validate PR descriptions or test YAML configurations in your pipeline without incurring API costs:
+git diff origin/main | ollama run llama2 'Check for style and clarity issues'
+Local app embedding
+. Power a desktop or web app via the local REST API for instant LLM features:
+curl -X POST http://localhost:11434/api/chat -d '{"model":"mistral","prompt":"Translate to German"}'
+Read the full
+Ollama docs ↗
+for advanced topics like custom model hosting, GPU tuning, and integrating with your development workflows.
+Previous
+Authentication: Google Auth
+Next
+3. Large Language Models

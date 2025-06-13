@@ -1,0 +1,346 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+Terminal: Bash
+UNIX shells are the de facto standard in the data science world and
+Bash
+is the most popular.
+This is available by default on Mac and Linux.
+On Windows, install
+Git Bash
+or
+WSL
+to get a UNIX shell.
+Watch this video to install WSL (12 min).
+Watch this video to understand the basics of Bash and UNIX shell commands (75 min).
+Essential Commands:
+# File Operations
+ls
+-la
+# List all files with details
+cd
+path/to/dir
+# Change directory
+pwd
+# Print working directory
+cp
+source
+dest
+# Copy files
+mv
+source
+dest
+# Move/rename files
+rm
+-rf
+dir
+# Remove directory recursively
+# Text Processing
+grep
+"pattern"
+file
+# Search for pattern
+sed
+'s/old/new/'
+f
+# Replace text
+awk
+'{print $1}'
+f
+# Process text by columns
+cat
+file
+|
+wc
+-l
+# Count lines
+# Process Management
+ps
+aux
+# List processes
+kill
+-9
+PID
+# Force kill process
+top
+# Monitor processes
+htop
+# Interactive process viewer
+# Network
+curl
+url
+# HTTP requests
+wget
+url
+# Download files
+nc
+-zv
+host
+port
+# Test connectivity
+ssh
+user@host
+# Remote login
+# Count unique values in CSV column
+cut
+-d
+','
+-f1
+data.csv
+|
+sort
+|
+uniq
+-c
+# Quick data analysis
+awk
+-F
+','
+'{sum+=$2} END {print sum/NR}'
+data.csv
+# Average
+sort
+-t
+','
+-k2
+-n
+data.csv
+|
+head
+# Top 10
+# Monitor log in real-time
+tail
+-f
+log.txt
+|
+grep
+--color
+'ERROR'
+Copy to clipboard
+Error
+Copied
+Bash Scripting Essentials:
+#!/bin/bash
+# Variables
+NAME
+=
+"value"
+echo
+$NAME
+# Loops
+for
+i
+in
+{
+1
+..
+5
+}
+;
+do
+echo
+$i
+done
+# Conditionals
+if
+[
+-f
+"file.txt"
+]
+;
+then
+echo
+"File exists"
+fi
+# Functions
+process_data
+(
+)
+{
+local
+input
+=
+$1
+echo
+"Processing
+$input
+"
+}
+Copy to clipboard
+Error
+Copied
+Productivity Tips:
+Command History
+history
+# Show command history
+Ctrl+R
+# Search history
+!
+!
+# Repeat last command
+!
+$
+# Last argument
+Copy to clipboard
+Error
+Copied
+Directory Navigation
+pushd
+dir
+# Push directory to stack
+popd
+# Pop directory from stack
+cd
+-
+# Go to previous directory
+Copy to clipboard
+Error
+Copied
+Job Control
+command
+&
+# Run in background
+Ctrl+Z
+# Suspend process
+bg
+# Resume in background
+fg
+# Resume in foreground
+Copy to clipboard
+Error
+Copied
+Useful Aliases
+- typically added to
+~/.bashrc
+alias
+ll
+=
+'ls -la'
+alias
+gs
+=
+'git status'
+alias
+jupyter
+=
+'jupyter notebook'
+alias
+activate
+=
+'source venv/bin/activate'
+Copy to clipboard
+Error
+Copied
+Previous
+JSON
+Next
+AI Terminal Tools: llm

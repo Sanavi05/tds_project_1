@@ -1,0 +1,229 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+Version Control: Git, GitHub
+Git
+is the de facto standard for version control of software (and sometimes, data as well). It’s a system that keeps track of changes you make to files and folders. It allows you to revert to a previous state, compare changes, etc. It’s a central tool in any developer’s workflow.
+GitHub
+is the most popular hosting service for Git repositories. It’s a website that shows your code, allows you to collaborate with others, and provides many useful tools for developers.
+Watch these introductory videos to learn the basics of Git and GitHub (98 min):
+Essential Git Commands:
+# Repository Setup
+git
+init
+# Create new repo
+git
+clone url
+# Clone existing repo
+git
+remote
+add
+origin url
+# Connect to remote
+# Basic Workflow
+git
+status
+# Check status
+git
+add
+.
+# Stage all changes
+git
+commit
+-m
+"message"
+# Commit changes
+git
+push origin main
+# Push to remote
+# Branching
+git
+branch
+# List branches
+git
+checkout
+-b
+feature
+# Create/switch branch
+git
+merge feature
+# Merge branch
+git
+rebase main
+# Rebase on main
+# History
+git
+log
+--oneline
+# View history
+git
+diff
+commit1 commit2
+# Compare commits
+git
+blame
+file
+# Show who changed what
+Copy to clipboard
+Error
+Copied
+Best Practices:
+Commit Messages
+# Good commit message format
+type
+(
+scope
+)
+: summary
+
+Detailed description of changes.
+# Examples
+feat
+(
+api
+)
+:
+add
+user authentication
+fix
+(
+db
+)
+: handle null values
+in
+query
+Copy to clipboard
+Error
+Copied
+Branching Strategy
+main: Production code
+develop: Integration branch
+feature/*: New features
+hotfix/*: Emergency fixes
+Code Review
+Keep PRs small (<400 lines)
+Use draft PRs for WIP
+Review your own code first
+Respond to all comments
+Essential Tools
+GitHub Desktop
+: GUI client
+GitLens
+: VS Code extension
+gh
+: GitHub CLI
+pre-commit
+: Git hooks
+Previous
+Database: SQLite
+Next
+2. Deployment Tools

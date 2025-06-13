@@ -1,0 +1,292 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+CORS: Cross-Origin Resource Sharing
+REST APIs
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+CORS: Cross-Origin Resource Sharing
+CORS (Cross-Origin Resource Sharing) is a security mechanism that controls how web browsers handle requests between different origins (domains, protocols, or ports). Data scientists need CORS for APIs serving data or analysis to a browser on a different domain.
+Watch this practical explanation of CORS (3 min):
+Key CORS concepts:
+Same-Origin Policy
+: Browsers block requests between different origins by default
+CORS Headers
+: Server responses must include specific headers to allow cross-origin requests
+Preflight Requests
+: Browsers send OPTIONS requests to check if the actual request is allowed
+Credentials
+: Special handling required for requests with cookies or authentication
+If you’re exposing your API with a GET request publicly, the only thing you need to do is set the HTTP header
+Access-Control-Allow-Origin: *
+.
+Here are other common CORS headers:
+Access-Control-Allow-Origin: https://example.com
+Access-Control-Allow-Methods: GET, POST, PUT, DELETE
+Access-Control-Allow-Headers: Content-Type, Authorization
+Access-Control-Allow-Credentials: true
+Copy to clipboard
+Error
+Copied
+To implement CORS in FastAPI, use the
+CORSMiddleware
+middleware
+:
+from
+fastapi
+import
+FastAPI
+from
+fastapi
+.
+middleware
+.
+cors
+import
+CORSMiddleware
+
+app
+=
+FastAPI
+(
+)
+app
+.
+add_middleware
+(
+CORSMiddleware
+,
+allow_origins
+=
+[
+"*"
+]
+)
+# Allow GET requests from all origins
+# Or, provide more granular control:
+app
+.
+add_middleware
+(
+CORSMiddleware
+,
+allow_origins
+=
+[
+"https://example.com"
+]
+,
+# Allow a specific domain
+allow_credentials
+=
+True
+,
+# Allow cookies
+allow_methods
+=
+[
+"GET"
+,
+"POST"
+,
+"PUT"
+,
+"DELETE"
+]
+,
+# Allow specific methods
+allow_headers
+=
+[
+"*"
+]
+,
+# Allow all headers
+)
+Copy to clipboard
+Error
+Copied
+Testing CORS with JavaScript:
+// Simple request
+const
+response
+=
+await
+fetch
+(
+"https://api.example.com/data"
+,
+{
+method
+:
+"GET"
+,
+headers
+:
+{
+"Content-Type"
+:
+"application/json"
+}
+,
+}
+)
+;
+// Request with credentials
+const
+response
+=
+await
+fetch
+(
+"https://api.example.com/data"
+,
+{
+credentials
+:
+"include"
+,
+headers
+:
+{
+"Content-Type"
+:
+"application/json"
+}
+,
+}
+)
+;
+Copy to clipboard
+Error
+Copied
+Useful CORS debugging tools:
+CORS Checker
+: Test CORS configurations
+Browser DevTools Network tab: Inspect CORS headers and preflight requests
+cors-anywhere
+: CORS proxy for development
+Common CORS errors and solutions:
+No 'Access-Control-Allow-Origin' header
+: Configure server to send proper CORS headers
+Request header field not allowed
+: Add required headers to
+Access-Control-Allow-Headers
+Credentials flag
+: Set both
+credentials: 'include'
+and
+Access-Control-Allow-Credentials: true
+Wild card error
+: Cannot use
+*
+with credentials; specify exact origins
+Previous
+Tunneling: ngrok
+Next
+REST APIs

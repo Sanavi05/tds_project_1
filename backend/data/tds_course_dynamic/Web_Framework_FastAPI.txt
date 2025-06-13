@@ -1,0 +1,293 @@
+Tools in Data Science
+Tools in Data Science
+1. Development Tools
+Editor: VS Code
+AI Code Editors: GitHub Copilot
+Python tools: uv
+JavaScript tools: npx
+Unicode
+Browser: DevTools
+CSS Selectors
+JSON
+Terminal: Bash
+AI Terminal Tools: llm
+Spreadsheet: Excel, Google Sheets
+Database: SQLite
+Version Control: Git, GitHub
+2. Deployment Tools
+Markdown
+Images: Compression
+Static hosting: GitHub Pages
+Notebooks: Google Colab
+Serverless hosting: Vercel
+CI/CD: GitHub Actions
+Containers: Docker, Podman
+DevContainers: GitHub Codespaces
+Tunneling: ngrok
+CORS
+REST APIs
+Web Framework: FastAPI
+Web Framework: FastAPI
+Authentication: Google Auth
+Local LLMs: Ollama
+3. Large Language Models
+Prompt engineering
+TDS TA Instructions
+TDS GPT Reviewer
+LLM Sentiment Analysis
+LLM Text Extraction
+Base 64 Encoding
+Vision Models
+Embeddings
+Multimodal Embeddings
+Topic modeling
+Vector databases
+RAG with the CLI)
+Hybrid RAG with TypeSense
+Function Calling
+LLM Agents
+LLM Image Generation
+LLM Speech
+LLM Evals
+Project 1
+4. Data Sourcing
+Scraping with Excel
+Scraping with Google Sheets
+Crawling with the CLI
+BBC Weather API with Python
+Scraping IMDb with JavaScript
+Nominatim API with Python
+Wikipedia Data with Python
+Scraping PDFs with Tabula
+Convert PDFs to Markdown
+Convert HTML to Markdown
+LLM Website Scraping
+LLM Video Screen-Scraping
+Web Automation with Playwright
+Scheduled Scraping with GitHub Actions
+Scraping emarketer.com
+Scraping: Live Sessions
+5. Data Preparation
+Data Cleansing in Excel
+Data Transformation in Excel
+Splitting Text in Excel
+Data Aggregation in Excel
+Data Preparation in the Shell
+Data Preparation in the Editor
+Data Preparation in DuckDB
+Cleaning Data with OpenRefine
+Parsing JSON
+Data Transformation with dbt
+Transforming Images
+Extracting Audio and Transcripts
+6. Data Analysis
+Correlation with Excel
+Regression with Excel
+Forecasting with Excel
+Outlier Detection with Excel
+Data Analysis with Python
+Data Analysis with SQL
+Data Analysis with Datasette
+Data Analysis with DuckDB
+Data Analysis with ChatGPT
+Geospatial Analysis with Excel
+Geospatial Analysis with Python
+Geospatial Analysis with QGIS
+Network Analysis in Python
+Project 2
+7. Data Visualization
+Visualizing Forecasts with Excel
+Visualizing Animated Data with PowerPoint
+Visualizing Animated Data with Flourish
+Visualizing Network Data with Kumu
+Visualizing Charts with Excel
+Data Visualization with Seaborn
+Data Visualization with ChatGPT
+Actor Network Visualization
+RAWgraphs
+Data Storytelling
+Narratives with LLMs
+Interactive Notebooks: Marimo
+HTML Slides: RevealJS
+Markdown Presentations: Marp
+Web Framework: FastAPI
+FastAPI
+is a modern Python web framework for building APIs with automatic interactive documentation. It’s fast, easy to use, and designed for building production-ready REST APIs.
+Here’s a minimal FastAPI app,
+app.py
+:
+# /// script
+# requires-python = ">=3.11"
+# dependencies = [
+#   "fastapi",
+#   "uvicorn",
+# ]
+# ///
+from
+fastapi
+import
+FastAPI
+
+app
+=
+FastAPI
+(
+)
+@app
+.
+get
+(
+"/"
+)
+async
+def
+root
+(
+)
+:
+return
+{
+"message"
+:
+"Hello!"
+}
+if
+__name__
+==
+"__main__"
+:
+import
+uvicorn
+    uvicorn
+.
+run
+(
+app
+,
+host
+=
+"0.0.0.0"
+,
+port
+=
+8000
+)
+Copy to clipboard
+Error
+Copied
+Run this with
+uv run app.py
+.
+Handle errors by raising HTTPException
+from
+fastapi
+import
+HTTPException
+async
+def
+get_item
+(
+item_id
+:
+int
+)
+:
+if
+not
+valid_item
+(
+item_id
+)
+:
+raise
+HTTPException
+(
+status_code
+=
+404
+,
+detail
+=
+f"Item
+{
+item_id
+}
+not found"
+)
+Copy to clipboard
+Error
+Copied
+Use middleware for logging
+from
+fastapi
+import
+Request
+import
+time
+@app
+.
+middleware
+(
+"http"
+)
+async
+def
+add_timing
+(
+request
+:
+Request
+,
+call_next
+)
+:
+start
+=
+time
+.
+time
+(
+)
+response
+=
+await
+call_next
+(
+request
+)
+response
+.
+headers
+[
+"X-Process-Time"
+]
+=
+str
+(
+time
+.
+time
+(
+)
+-
+start
+)
+return
+response
+Copy to clipboard
+Error
+Copied
+Tools:
+FastAPI CLI
+: Project scaffolding
+Pydantic
+: Data validation
+SQLModel
+: SQL databases
+FastAPI Users
+: Authentication
+Watch this FastAPI Course for Beginners (64 min):
+Previous
+REST APIs
+Next
+Authentication: Google Auth
