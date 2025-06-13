@@ -11,3 +11,13 @@ vectorstore.pkl
 vectorstore_course.pkl
 node_modules/
 .git
+.gitignore
+*.webp
+*.png
+*.jpg
+*.jpeg
+*.pt
+*.bin
+*.npy
+*.pkl
+*.pdf

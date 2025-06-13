@@ -21,35 +21,68 @@
 
 
 # Use lightweight Python image
+# FROM python:3.10-slim
+
+# # Set environment variables
+# ENV PYTHONDONTWRITEBYTECODE=1
+# ENV PYTHONUNBUFFERED=1
+
+# # Install system dependencies
+# RUN apt-get update && apt-get install -y \
+#     build-essential \
+#     libglib2.0-0 \
+#     libsm6 \
+#     libxext6 \
+#     libxrender-dev \
+#     && apt-get clean
+
+# # Create working directory
+# WORKDIR /app
+
+# # Copy only requirements to leverage cache
+# COPY requirements.txt .
+
+# # Install Python dependencies
+# RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# # Copy project files
+# COPY . .
+
+# # Expose FastAPI port
+# EXPOSE 8000
+
+# # Start FastAPI app
+# CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
+
 FROM python:3.10-slim
 
-# Set environment variables
+# Avoid interactive prompts during build
+ENV DEBIAN_FRONTEND=noninteractive
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Install system dependencies
+# Install necessary system packages
 RUN apt-get update && apt-get install -y \
     build-essential \
+    libgl1 \
     libglib2.0-0 \
     libsm6 \
     libxext6 \
     libxrender-dev \
-    && apt-get clean
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Create working directory
+# Set working directory
 WORKDIR /app
 
-# Copy only requirements to leverage cache
+# Copy requirements and install dependencies first to cache
 COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-# Install Python dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Copy only relevant source files (not entire repo)
+COPY backend ./backend
+COPY main.py ./main.py  # if needed
 
-# Copy project files
-COPY . .
-
-# Expose FastAPI port
 EXPOSE 8000
 
-# Start FastAPI app
 CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
