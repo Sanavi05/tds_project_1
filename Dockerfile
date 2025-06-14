@@ -86,3 +86,37 @@
 # EXPOSE 8000
 
 # CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
+
+FROM python:3.10-slim
+
+# Avoid interactive prompts and improve Python behavior
+ENV DEBIAN_FRONTEND=noninteractive
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+
+# Install required system packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libgl1 \
+    libglib2.0-0 \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create app directory
+WORKDIR /app
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
+# Copy app source (only backend)
+COPY backend backend
+
+# Port
+EXPOSE 8000
+
+# Run the app
+CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
