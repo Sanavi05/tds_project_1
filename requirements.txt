@@ -11,4 +11,5 @@ selenium
 webdriver-manager
 python-multipart
 promptfoo
+huggingface_hub==0.16.4
 
