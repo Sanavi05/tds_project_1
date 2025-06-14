@@ -54,35 +54,35 @@
 # # Start FastAPI app
 # CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
 
-FROM python:3.10-slim
+# FROM python:3.10-slim
 
-# Avoid interactive prompts during build
-ENV DEBIAN_FRONTEND=noninteractive
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
+# # Avoid interactive prompts during build
+# ENV DEBIAN_FRONTEND=noninteractive
+# ENV PYTHONDONTWRITEBYTECODE=1
+# ENV PYTHONUNBUFFERED=1
 
-# Install necessary system packages
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    libgl1 \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# # Install necessary system packages
+# RUN apt-get update && apt-get install -y \
+#     build-essential \
+#     libgl1 \
+#     libglib2.0-0 \
+#     libsm6 \
+#     libxext6 \
+#     libxrender-dev \
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/*
 
-# Set working directory
-WORKDIR /app
+# # Set working directory
+# WORKDIR /app
 
-# Copy requirements and install dependencies first to cache
-COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
+# # Copy requirements and install dependencies first to cache
+# COPY requirements.txt .
+# RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
-# Copy only relevant source files (not entire repo)
-COPY backend ./backend
-COPY main.py ./main.py  # if needed
+# # Copy only relevant source files (not entire repo)
+# COPY backend ./backend
+# COPY main.py ./main.py  # if needed
 
-EXPOSE 8000
+# EXPOSE 8000
 
-CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
+# CMD ["uvicorn", "backend.api.qa_api:app", "--host", "0.0.0.0", "--port", "8000"]
