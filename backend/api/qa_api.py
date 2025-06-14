@@ -87,6 +87,11 @@ class QueryInput(BaseModel):
     question: str
     image: str = None  # Optional image (base64)
 
+@app.get("/")
+def read_root():
+    return {"message": "TDS Virtual TA is running!"}
+
+
 @app.post("/ask")
 def ask_question(input: QueryInput):
     question = input.question
