@@ -63,8 +63,21 @@ from sentence_transformers import SentenceTransformer
 from .aipipe_client import query_aipipe
 from sklearn.metrics.pairwise import cosine_similarity
 import os
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="TDS Virtual TA")
+
+# Add this after app definition
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allow all origins — you can restrict to specific domain later
+    allow_credentials=True,
+    allow_methods=["*"],  # Allow all methods (GET, POST, OPTIONS, etc.)
+    allow_headers=["*"],  # Allow all headers
+)
+
+
+#app = FastAPI(title="TDS Virtual TA")
 
 # Base paths
 BASE_DIR = os.path.dirname(__file__)
@@ -105,8 +118,8 @@ def ask_question(input: QueryInput):
         return [(texts[i], sims[i]) for i in indices]
 
     # Top 5 from both sources
-    top_disc = get_top_k(texts_disc, embeds_disc, k=5)
-    top_course = get_top_k(texts_course, embeds_course, k=5)
+    top_disc = get_top_k(texts_disc, embeds_disc, k=3)
+    top_course = get_top_k(texts_course, embeds_course, k=3)
 
     # Combine context
     combined_context = "\n\n".join([text for text, _ in top_disc + top_course])
