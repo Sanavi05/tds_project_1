@@ -4,8 +4,8 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 # System deps
-RUN apt-get update && apt-get install -y \
-    build-essential \
+RUN apt-get update && \
+    apt-get install -y \
     libgl1 \
     libglib2.0-0 \
     libsm6 \
