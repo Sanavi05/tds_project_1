@@ -58,6 +58,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import pickle
+from contextlib import asynccontextmanager
 import numpy as np
 from sentence_transformers import SentenceTransformer
 from .aipipe_client import query_aipipe
@@ -65,6 +66,16 @@ from sklearn.metrics.pairwise import cosine_similarity
 import os
 from fastapi.middleware.cors import CORSMiddleware
 
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Warm-up model and anything else you want
+    print("🔁 Warming up model...")
+    _ = model.encode(["startup check"])
+    print("✅ Model ready")
+    yield
+    # Optional: Cleanup actions after shutdown (if needed)
+    print("👋 Shutting down app")
+    
 app = FastAPI(title="TDS Virtual TA")
 
 # Add this after app definition
@@ -99,6 +110,12 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 class QueryInput(BaseModel):
     question: str
     image: str = None  # Optional image (base64)
+
+@app.on_event("startup")
+def warm_up_model():
+    # Force model and vectorstore to load on boot (not on first request)
+    _ = model.encode(["startup check"])
+
 
 @app.get("/")
 def read_root():
