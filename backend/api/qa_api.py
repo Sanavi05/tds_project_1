@@ -96,7 +96,9 @@ texts_disc, embeds_disc = load_vectorstore(DISC_VECTORSTORE_PATH)
 texts_course, embeds_course = load_vectorstore(COURSE_VECTORSTORE_PATH)
 
 # Load model
-model = SentenceTransformer("all-MiniLM-L6-v2")
+# model = SentenceTransformer("all-MiniLM-L6-v2")
+model = SentenceTransformer("all-MiniLM-L6-v2", cache_folder="/tmp")
+
 
 class QueryInput(BaseModel):
     question: str
