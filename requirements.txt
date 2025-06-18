@@ -1,15 +1,26 @@
+# fastapi
+# uvicorn
+# pydantic
+# sentence-transformers==2.2.2
+# #torch==1.13.1  # Optional, try without first
+# numpy
+# scikit-learn
+# requests
+# beautifulsoup4
+# selenium
+# webdriver-manager
+# python-multipart
+# promptfoo
+# huggingface_hub==0.16.4
+
+
+
 fastapi
 uvicorn
 pydantic
 sentence-transformers==2.2.2
-#torch==1.13.1  # Optional, try without first
-numpy
 scikit-learn
+numpy
 requests
-beautifulsoup4
-selenium
-webdriver-manager
 python-multipart
-promptfoo
 huggingface_hub==0.16.4
-
